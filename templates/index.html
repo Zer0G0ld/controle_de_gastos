@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de finanças</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <h1>Lista de Gastos</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Categoria</th>
+                <th>Data</th>
+            </tr>
+            {% for gasto in registros %}
+            <tr>
+                <td>{{ gasto[0] }}</td>
+                <td>{{ gasto[1] }}</td>
+                <td>{{ gasto[2] }}</td>
+                <td>{{ gasto[3] }}</td>
+                <td>{{ gasto[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/adicionar">Adicionar Gasto</a>
+    </main>
+    <footer>
+        <p>&copy; CodeOpen</p>
+    </footer>
+</body>
+</html>
